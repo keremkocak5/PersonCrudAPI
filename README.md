@@ -209,8 +209,11 @@ To strap the Person CRUD API Application with Vagrant;
 8. You are now ready to run the Person CRUD API. Follow the "Running the service" chapter for instructions.
 9. When you are done with running the application, execute the following command where Vagrant template resides: **vagrant halt**
 
+![Screenshot](/images/vag2.jpg)
 
+![Screenshot](/images/vag3.jpg)
 
+![Screenshot](/images/vag5.jpg)
 
 ### Running the service
 
@@ -239,10 +242,13 @@ mvn clean install -Dspring.profiles.active=test
 
 A Jacoco coverage file will be generated in your local directory ".../target/site/jacoco/index.html" 
 
+![Screenshot](/images/testresults.jpg)
 
 ### H2 Database
 
 This application uses in-memory H2 database. You may access H2 console, only if you alter "configure" method in SecurityConfig class.
+
+![Screenshot](/images/h2h2.jpg)
 
 The column properties of Person table are as follows:
 
