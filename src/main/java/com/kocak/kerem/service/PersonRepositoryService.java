@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PersonRepositoryService {
 
-    void saveOrUpdatePerson(Person person);
+    Person saveOrUpdatePerson(Person person);
 
     int deletePerson(String deleteUserName, int id);
 

@@ -22,8 +22,8 @@ public class PersonRepositoryServiceImpl implements PersonRepositoryService {
 
     @Transactional
     @Override
-    public void saveOrUpdatePerson(Person person) {
-        personRepository.save(person);
+    public Person saveOrUpdatePerson(Person person) {
+        return personRepository.save(person);
     }
 
     @Transactional

@@ -1,10 +1,9 @@
-package com.kocak.kerem.kocak.demo.mapper;
+package com.kocak.kerem.mapper;
 
 import com.kocak.kerem.domain.request.GetPersonRequestDTO;
 import com.kocak.kerem.domain.request.PostPersonRequestDTO;
 import com.kocak.kerem.domain.response.GetPersonResponseDTO;
 import com.kocak.kerem.enums.PersonStatus;
-import com.kocak.kerem.mapper.PersonMapper;
 import com.kocak.kerem.model.Person;
 import com.kocak.kerem.repository.criteria.PersonCriteria;
 import org.junit.jupiter.api.Test;

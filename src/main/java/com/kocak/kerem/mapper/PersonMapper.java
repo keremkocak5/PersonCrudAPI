@@ -39,5 +39,4 @@ public class PersonMapper {
         getPersonResponseDTO.setPersons(getPersonDetailResponseDTOS);
         return getPersonResponseDTO;
     }
-    // kerem buraya flatmap gelecek
 }

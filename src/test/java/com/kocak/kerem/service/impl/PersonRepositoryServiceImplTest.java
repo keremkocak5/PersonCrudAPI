@@ -1,11 +1,10 @@
-package com.kocak.kerem.kocak.demo.service.impl;
+package com.kocak.kerem.service.impl;
 
 import com.kocak.kerem.enums.PersonStatus;
 import com.kocak.kerem.model.Person;
 import com.kocak.kerem.repository.PersonRepository;
 import com.kocak.kerem.repository.criteria.PersonCriteria;
 import com.kocak.kerem.repository.spec.PersonSpec;
-import com.kocak.kerem.service.impl.PersonRepositoryServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

@@ -4,7 +4,6 @@ import com.kocak.kerem.domain.request.DeletePersonRequestDTO;
 import com.kocak.kerem.domain.request.GetPersonRequestDTO;
 import com.kocak.kerem.domain.request.PostPersonRequestDTO;
 import com.kocak.kerem.domain.request.PutPersonRequestDTO;
-import com.kocak.kerem.domain.response.BasePersonResponseDTO;
 import com.kocak.kerem.domain.response.GetPersonResponseDTO;
 import com.kocak.kerem.exception.NoPersonFoundException;
 import com.kocak.kerem.service.PersonService;
@@ -34,12 +33,12 @@ public class PersonController {
     @Autowired
     private PersonService personService;
 
-    @ApiOperation(value = "Creates a Person entity in the storage", notes = "All fields are mandatory", response = BasePersonResponseDTO.class)
+    @ApiOperation(value = "Creates a Person entity in the storage", notes = "All fields are mandatory", response = ResponseEntity.class)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Validated
-    public ResponseEntity<BasePersonResponseDTO> postPerson(@Valid @RequestBody PostPersonRequestDTO postPersonRequestDTO, HttpServletRequest request) {
+    public ResponseEntity<String> postPerson(@Valid @RequestBody PostPersonRequestDTO postPersonRequestDTO, HttpServletRequest request) {
         personService.addPerson(postPersonRequestDTO, request.getUserPrincipal().getName());
-        return ResponseEntity.ok(new BasePersonResponseDTO());
+        return ResponseEntity.ok("Ok");
     }
 
     @ApiOperation(value = "Retrieves Person entities from the storage", notes = "All fields optional", response = GetPersonResponseDTO.class)
@@ -52,26 +51,26 @@ public class PersonController {
         return ResponseEntity.ok(getPersonResponseDTO);
     }
 
-    @ApiOperation(value = "Deletes a Person entity from the storage", notes = "ID Number of the record should be supplied as a parameter", response = BasePersonResponseDTO.class)
+    @ApiOperation(value = "Deletes a Person entity from the storage", notes = "ID Number of the record should be supplied as a parameter", response = ResponseEntity.class)
     @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Validated
-    public ResponseEntity<BasePersonResponseDTO> deletePerson(@Valid @RequestBody DeletePersonRequestDTO deletePersonRequestDTO, HttpServletRequest request) {
+    public ResponseEntity<String> deletePerson(@Valid @RequestBody DeletePersonRequestDTO deletePersonRequestDTO, HttpServletRequest request) {
         int affectedRows = personService.deletePerson(deletePersonRequestDTO, request.getUserPrincipal().getName());
         if (affectedRows < 1) {
             throw new NoPersonFoundException();
         }
-        return ResponseEntity.ok(new BasePersonResponseDTO());
+        return ResponseEntity.ok("Ok");
     }
 
-    @ApiOperation(value = "Updates a Person entity in the storage", notes = "ID Number of the record to be updates be supplied as a parameter", response = BasePersonResponseDTO.class)
+    @ApiOperation(value = "Updates a Person entity in the storage", notes = "ID Number of the record to be updates be supplied as a parameter", response = ResponseEntity.class)
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     @Validated
-    public ResponseEntity<BasePersonResponseDTO> putPerson(@Valid @RequestBody PutPersonRequestDTO putPersonRequestDTO, HttpServletRequest request) {
+    public ResponseEntity<String> putPerson(@Valid @RequestBody PutPersonRequestDTO putPersonRequestDTO, HttpServletRequest request) {
         int affectedRows = personService.putPerson(putPersonRequestDTO, request.getUserPrincipal().getName());
         if (affectedRows < 1) {
             throw new NoPersonFoundException();
         }
-        return ResponseEntity.ok(new BasePersonResponseDTO());
+        return ResponseEntity.ok("Ok");
     }
 
 }

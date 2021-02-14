@@ -1,5 +1,6 @@
-package com.kocak.kerem.exception;
+package com.kocak.kerem.controller.v1;
 
+import com.kocak.kerem.exception.NoPersonFoundException;
 import com.kocak.kerem.util.ApiConstants;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

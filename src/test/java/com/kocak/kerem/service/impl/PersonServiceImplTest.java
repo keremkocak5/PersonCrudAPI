@@ -1,4 +1,4 @@
-package com.kocak.kerem.kocak.demo.service.impl;
+package com.kocak.kerem.service.impl;
 
 import com.kocak.kerem.domain.request.DeletePersonRequestDTO;
 import com.kocak.kerem.domain.request.GetPersonRequestDTO;
@@ -9,7 +9,6 @@ import com.kocak.kerem.mapper.PersonMapper;
 import com.kocak.kerem.model.Person;
 import com.kocak.kerem.repository.criteria.PersonCriteria;
 import com.kocak.kerem.service.PersonRepositoryService;
-import com.kocak.kerem.service.impl.PersonServiceImpl;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;

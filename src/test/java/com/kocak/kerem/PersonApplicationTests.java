@@ -1,4 +1,4 @@
-package com.kocak.kerem.kocak.demo;
+package com.kocak.kerem;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

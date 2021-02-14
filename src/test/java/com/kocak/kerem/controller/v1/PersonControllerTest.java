@@ -1,11 +1,9 @@
-package com.kocak.kerem.kocak.demo.controller.v1;
+package com.kocak.kerem.controller.v1;
 
-import com.kocak.kerem.controller.v1.PersonController;
 import com.kocak.kerem.domain.request.DeletePersonRequestDTO;
 import com.kocak.kerem.domain.request.GetPersonRequestDTO;
 import com.kocak.kerem.domain.request.PostPersonRequestDTO;
 import com.kocak.kerem.domain.request.PutPersonRequestDTO;
-import com.kocak.kerem.domain.response.BasePersonResponseDTO;
 import com.kocak.kerem.domain.response.GetPersonDetailResponseDTO;
 import com.kocak.kerem.domain.response.GetPersonResponseDTO;
 import com.kocak.kerem.enums.PersonStatus;
@@ -99,7 +97,7 @@ public class PersonControllerTest {
         Mockito.when(request.isUserInRole(ROLE)).thenReturn(true);
         Mockito.doNothing().when(personService).addPerson(Mockito.any(), Mockito.any());
 
-        ResponseEntity<BasePersonResponseDTO> response = personController.postPerson(postUserRequestDTO, request);
+        ResponseEntity<String> response = personController.postPerson(postUserRequestDTO, request);
         assertThat(response.getStatusCode()).isEqualTo(STATUS_OK);
     }
 
@@ -112,7 +110,7 @@ public class PersonControllerTest {
         Mockito.when(request.isUserInRole(ROLE)).thenReturn(true);
         Mockito.when(personService.putPerson(Mockito.any(), Mockito.any())).thenReturn(1);
 
-        ResponseEntity<BasePersonResponseDTO> response = personController.putPerson(putPersonRequestDTO, request);
+        ResponseEntity<String> response = personController.putPerson(putPersonRequestDTO, request);
         assertThat(response.getStatusCode()).isEqualTo(STATUS_OK);
     }
 
@@ -139,7 +137,7 @@ public class PersonControllerTest {
         Mockito.when(request.isUserInRole(ROLE)).thenReturn(true);
         Mockito.when(personService.deletePerson(Mockito.any(), Mockito.any())).thenReturn(1);
 
-        ResponseEntity<BasePersonResponseDTO> response = personController.deletePerson(deletePersonRequestDTO, request);
+        ResponseEntity<String> response = personController.deletePerson(deletePersonRequestDTO, request);
         assertThat(response.getStatusCode()).isEqualTo(STATUS_OK);
     }
 

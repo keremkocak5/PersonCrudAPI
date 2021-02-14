@@ -23,15 +23,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic();
     }
 
-    /** Enable this block and disable the one above to access H2 console on your local environment.
-
-    @Override
-    protected void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
-                .authorizeRequests().antMatchers("/console/**").permitAll();
-        httpSecurity.csrf().disable();
-        httpSecurity.headers().frameOptions().disable();
-    }*/
+    /**
+     * Enable this block and disable the one above to access H2 console on your local environment.
+     *
+     * @Override protected void configure(HttpSecurity httpSecurity) throws Exception {
+     * httpSecurity.authorizeRequests().antMatchers("/").permitAll().and()
+     * .authorizeRequests().antMatchers("/console/**").permitAll();
+     * httpSecurity.csrf().disable();
+     * httpSecurity.headers().frameOptions().disable();
+     * }
+     */
 
     @Override
     public void configure(WebSecurity web) {
